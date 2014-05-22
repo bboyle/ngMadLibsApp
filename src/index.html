@@ -1,46 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html ng-app="madLibs" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>ngMadLibs App</title>
 	<link rel="stylesheet" href="ngMadLibs.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="ngMadLibs.js"></script>
 </head>
-<body ng-app="">
+<body>
 
 	<header>
 		<h1><img src="img/ng-mad-libs-logo.png" alt="ngMadLibs App"></h1>
 		<h2>Automate this!</h2>
 	</header>
 
-	<section>
-		<h3>Provide the following words:</h3>
-		<ul>
-			<li><input type="text" size="15" ng-model="femaleName" ng-init="femaleName='Sue'"></li>
-			<li><input type="text" size="10" ng-model="jobTitle" ng-init="jobTitle='Teacher'"></li>
-			<li><input type="text" size="15" ng-model="tediousTask" ng-init="tediousTask='playground duty'"></li>
-			<li><input type="text" size="10" ng-model="dirtyTask" ng-init="dirtyTask='math'"></li>
-			<li><input type="text" size="15" ng-model="uselessSkill" ng-init="uselessSkill='‘pity da foo’'"></li>
-			<li><input type="text" size="10" ng-model="obnoxiousCelebrity" ng-init="obnoxiousCelebrity='Mr. T'"></li>
-			<li><input type="text" size="10" ng-model="adjective" ng-init="adjective='foo’ pitying'"></li>
-			<li><input type="text" size="15" ng-model="hugeNumber" ng-init="hugeNumber='1000 times'"></li>
-		</ul>
-	</section>
 
-	<article>
-		<p>
-			{{ femaleName }} was a {{ jobTitle }} who loved technology.
-			Although she loved parts of her job, she absolutely hated {{ tediousTask }} and {{ dirtyTask }}.
-			So, {{ femaleName }} met with her life mentor {{ obnoxiousCelebrity }} who told her to learn how to {{ uselessSkill }} with Thinkful.
-			Thinkful didn't offer a course on {{ uselessSkill }} so she studied programming instead.
-		</p>
-	
-		<p>
-			What a great decision!
-			With her new skills, {{ femaleName }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity | uppercase }}
-			that not only loved {{ dirtyTask }} but did it {{ hugeNumber }} faster.
-		</p>
-	</article>
+	<div ng-controller="madLibsController">
+		<section>
+			<h3>Provide the following words:</h3>
+			<ul>
+				<li>
+					<input type="radio" ng-model="gender" name="gender" id="gender-Female" value="Female"><label for="gender-Female">Woman</label>
+					&nbsp;
+					<input type="radio" ng-model="gender" name="gender" id="gender-Male" value="Male"><label for="gender-Male">Man</label>
+				</li>
+				<li><input type="text" size="15" ng-model="protoganist"></li>
+				<li><input type="text" size="10" ng-model="jobTitle"></li>
+				<li><input type="text" size="15" ng-model="tediousTask"></li>
+				<li><input type="text" size="10" ng-model="dirtyTask"></li>
+				<li><input type="text" size="15" ng-model="uselessSkill"></li>
+				<li><input type="text" size="10" ng-model="obnoxiousCelebrity"></li>
+				<li><input type="text" size="10" ng-model="adjective"></li>
+				<li><input type="text" size="15" ng-model="hugeNumber"></li>
+			</ul>
+		</section>
+
+		<article>
+			<p>
+				{{ protoganist }} was a {{ jobTitle }} who loved technology.
+				Although {{ gender === 'Female' ? 'she' : 'he' }} loved parts of {{ gender === 'Female' ? 'her' : 'his' }} job,
+				{{ gender === 'Female' ? 'she' : 'he' }} absolutely hated {{ tediousTask }} and {{ dirtyTask }}.
+				So, {{ protoganist }} met with {{ gender === 'Female' ? 'her' : 'his' }} life mentor {{ obnoxiousCelebrity }}
+				who told {{ gender === 'Female' ? 'her' : 'him' }} to learn how to {{ uselessSkill }} with Thinkful.
+				Thinkful didn't offer a course on {{ uselessSkill }} so {{ gender === 'Female' ? 'she' : 'he' }} studied programming instead.
+			</p>
+		
+			<p>
+				What a great decision!
+				With {{ gender === 'Female' ? 'her' : 'his' }} new skills,
+				{{ protoganist }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity | uppercase }}
+				that not only loved {{ dirtyTask }} but did it {{ hugeNumber }} faster.
+			</p>
+		</article>
+	</div>
 
 	
 </body>
