@@ -48,6 +48,9 @@ input {
 	width: auto;
 	margin: 1em 0;
 }
+input[type="number"] {
+	width: 5em;
+}
 button {
 	border: 3px solid #000;
 	border-radius: 3px;
