@@ -1,6 +1,7 @@
 body {
 	font: 18px/1.5 Verdana, sans-serif;
 	margin: 0 auto;
+	padding: 2em;
 	background: #fafafa;
 	color: #333;
 	max-width: 40em;
@@ -46,4 +47,22 @@ input {
 	display: inline;
 	width: auto;
 	margin: 1em 0;
+}
+input[type="number"] {
+	width: 5em;
+}
+button {
+	border: 3px solid #000;
+	border-radius: 3px;
+	font: inherit;
+	margin: 0;
+	display: inline-block;
+	text-align: center;
+	padding: .2em 1em;
+	box-shadow: .3em .3em 0 rgba( 0, 0, 0, .8 );
+}
+button:active {
+	margin: .2em 0 -.2em .2em;
+	box-shadow: .1em .1em 0 rgba( 0, 0, 0, .9 );
+	transition: margin 60ms, box-shadow 50ms;
 }

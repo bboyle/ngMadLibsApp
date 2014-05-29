@@ -15,44 +15,47 @@
 	</header>
 
 
-	<div ng-controller="madLibsController">
-		<section>
-			<h3>Provide the following words:</h3>
+	<section ng-show="view.inputMode" ng-controller="madLibsFormController">
+		<h3>Provide the following words:</h3>
+		<form ng-submit="submit()">
 			<ul>
 				<li>
-					<input type="radio" ng-model="gender" name="gender" id="gender-Female" value="Female"><label for="gender-Female">Woman</label>
+					<input type="radio" required ng-model="data.gender" name="gender" id="gender-Female" value="Female"><label for="gender-Female">Woman</label>
 					&nbsp;
-					<input type="radio" ng-model="gender" name="gender" id="gender-Male" value="Male"><label for="gender-Male">Man</label>
+					<input type="radio" required ng-model="data.gender" name="gender" id="gender-Male" value="Male"><label for="gender-Male">Man</label>
 				</li>
-				<li><input type="text" size="15" ng-model="protoganist"></li>
-				<li><input type="text" size="10" ng-model="jobTitle"></li>
-				<li><input type="text" size="15" ng-model="tediousTask"></li>
-				<li><input type="text" size="10" ng-model="dirtyTask"></li>
-				<li><input type="text" size="15" ng-model="uselessSkill"></li>
-				<li><input type="text" size="10" ng-model="obnoxiousCelebrity"></li>
-				<li><input type="text" size="10" ng-model="adjective"></li>
-				<li><input type="text" size="15" ng-model="hugeNumber"></li>
+				<li><input type="text" size="15" required ng-model="data.protoganist"></li>
+				<li><input type="text" size="10" required ng-model="data.jobTitle"></li>
+				<li><input type="text" size="15" required ng-model="data.tediousTask"></li>
+				<li><input type="text" size="10" required ng-model="data.dirtyTask"></li>
+				<li><input type="text" size="15" required ng-model="data.uselessSkill"></li>
+				<li><input type="text" size="10" required ng-model="data.obnoxiousCelebrity"></li>
+				<li><input type="text" size="10" required ng-model="data.adjective"></li>
+				<li><input type="number" required ng-model="data.hugeNumber"></li>
 			</ul>
-		</section>
+			<button>Generate my mad lib</button>
+		</form>
+	</section>
 
-		<article>
-			<p>
-				{{ protoganist }} was a {{ jobTitle }} who loved technology.
-				Although {{ gender === 'Female' ? 'she' : 'he' }} loved parts of {{ gender === 'Female' ? 'her' : 'his' }} job,
-				{{ gender === 'Female' ? 'she' : 'he' }} absolutely hated {{ tediousTask }} and {{ dirtyTask }}.
-				So, {{ protoganist }} met with {{ gender === 'Female' ? 'her' : 'his' }} life mentor {{ obnoxiousCelebrity }}
-				who told {{ gender === 'Female' ? 'her' : 'him' }} to learn how to {{ uselessSkill }} with Thinkful.
-				Thinkful didn't offer a course on {{ uselessSkill }} so {{ gender === 'Female' ? 'she' : 'he' }} studied programming instead.
-			</p>
-		
-			<p>
-				What a great decision!
-				With {{ gender === 'Female' ? 'her' : 'his' }} new skills,
-				{{ protoganist }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity | uppercase }}
-				that not only loved {{ dirtyTask }} but did it {{ hugeNumber }} faster.
-			</p>
-		</article>
-	</div>
+	<article ng-show="view.show" ng-controller="madLibsStoryController">
+		<p>
+			{{ madLib.protoganist }} was a {{ madLib.jobTitle }} who loved technology.
+			Although {{ madLib.gender === 'Female' ? 'she' : 'he' }} loved parts of {{ madLib.gender === 'Female' ? 'her' : 'his' }} job,
+			{{ madLib.gender === 'Female' ? 'she' : 'he' }} absolutely hated {{ madLib.tediousTask }} and {{ madLib.dirtyTask }}.
+			So, {{ madLib.protoganist }} met with {{ madLib.gender === 'Female' ? 'her' : 'his' }} life mentor {{ madLib.obnoxiousCelebrity }}
+			who told {{ madLib.gender === 'Female' ? 'her' : 'him' }} to learn how to {{ madLib.uselessSkill }} with Thinkful.
+			Thinkful didn't offer a course on {{ madLib.uselessSkill }} so {{ madLib.gender === 'Female' ? 'she' : 'he' }} studied programming instead.
+		</p>
+	
+		<p>
+			What a great decision!
+			With {{ madLib.gender === 'Female' ? 'her' : 'his' }} new skills,
+			{{ madLib.protoganist }} built a(n) {{ madLib.adjective }} robot named {{ madLib.obnoxiousCelebrity | uppercase }}
+			that not only loved {{ madLib.dirtyTask }} but did it {{ madLib.hugeNumber }} times faster.
+		</p>
+
+		<button ng-click="reset()">Start over</button>
+	</article>
 
 	
 </body>
