@@ -30,7 +30,6 @@ angular.module( 'madLibs', [] )
 	$scope.$on( 'newMadLib', function() {
 		$scope.view.inputMode = true;
 	});
-
 })
 
 
@@ -51,5 +50,4 @@ angular.module( 'madLibs', [] )
 		$scope.madLib = data;
 		$scope.view.show = true;
 	});
-
 });
