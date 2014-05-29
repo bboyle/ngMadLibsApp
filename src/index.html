@@ -18,24 +18,27 @@
 	<div ng-controller="madLibsController">
 		<section>
 			<h3>Provide the following words:</h3>
-			<ul>
-				<li>
-					<input type="radio" ng-model="gender" name="gender" id="gender-Female" value="Female"><label for="gender-Female">Woman</label>
-					&nbsp;
-					<input type="radio" ng-model="gender" name="gender" id="gender-Male" value="Male"><label for="gender-Male">Man</label>
-				</li>
-				<li><input type="text" size="15" ng-model="protoganist"></li>
-				<li><input type="text" size="10" ng-model="jobTitle"></li>
-				<li><input type="text" size="15" ng-model="tediousTask"></li>
-				<li><input type="text" size="10" ng-model="dirtyTask"></li>
-				<li><input type="text" size="15" ng-model="uselessSkill"></li>
-				<li><input type="text" size="10" ng-model="obnoxiousCelebrity"></li>
-				<li><input type="text" size="10" ng-model="adjective"></li>
-				<li><input type="text" size="15" ng-model="hugeNumber"></li>
-			</ul>
+			<form action="#">
+				<ul>
+					<li>
+						<input type="radio" ng-model="gender" name="gender" id="gender-Female" value="Female"><label for="gender-Female">Woman</label>
+						&nbsp;
+						<input type="radio" ng-model="gender" name="gender" id="gender-Male" value="Male"><label for="gender-Male">Man</label>
+					</li>
+					<li><input type="text" size="15" ng-model="protoganist"></li>
+					<li><input type="text" size="10" ng-model="jobTitle"></li>
+					<li><input type="text" size="15" ng-model="tediousTask"></li>
+					<li><input type="text" size="10" ng-model="dirtyTask"></li>
+					<li><input type="text" size="15" ng-model="uselessSkill"></li>
+					<li><input type="text" size="10" ng-model="obnoxiousCelebrity"></li>
+					<li><input type="text" size="10" ng-model="adjective"></li>
+					<li><input type="text" size="15" ng-model="hugeNumber"></li>
+				</ul>
+				<button>Generate my mad lib</button>
+			</form>
 		</section>
 
-		<article>
+		<article ng-if="false">
 			<p>
 				{{ protoganist }} was a {{ jobTitle }} who loved technology.
 				Although {{ gender === 'Female' ? 'she' : 'he' }} loved parts of {{ gender === 'Female' ? 'her' : 'his' }} job,
