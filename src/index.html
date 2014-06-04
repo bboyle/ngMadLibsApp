@@ -39,19 +39,19 @@
 
 	<article ng-show="view.show" ng-controller="madLibsStoryController">
 		<p>
-			{{ madLib.protoganist }} was a {{ madLib.jobTitle }} who loved technology.
-			Although {{ madLib.gender === 'Female' ? 'she' : 'he' }} loved parts of {{ madLib.gender === 'Female' ? 'her' : 'his' }} job,
-			{{ madLib.gender === 'Female' ? 'she' : 'he' }} absolutely hated {{ madLib.tediousTask }} and {{ madLib.dirtyTask }}.
-			So, {{ madLib.protoganist }} met with {{ madLib.gender === 'Female' ? 'her' : 'his' }} life mentor {{ madLib.obnoxiousCelebrity }}
-			who told {{ madLib.gender === 'Female' ? 'her' : 'him' }} to learn how to {{ madLib.uselessSkill }} with Thinkful.
-			Thinkful didn't offer a course on {{ madLib.uselessSkill }} so {{ madLib.gender === 'Female' ? 'she' : 'he' }} studied programming instead.
+			<mark>{{ madLib.protoganist }}</mark> was a <mark>{{ madLib.jobTitle }}</mark> who loved technology.
+			Although <mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> loved parts of <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> job,
+			<mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> absolutely hated <mark>{{ madLib.tediousTask }}</mark> and <mark>{{ madLib.dirtyTask }}</mark>.
+			So, <mark>{{ madLib.protoganist }}</mark> met with <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> life mentor <mark>{{ madLib.obnoxiousCelebrity }}</mark>
+			who told <mark>{{ madLib.gender === 'Female' ? 'her' : 'him' }}</mark> to learn how to <mark>{{ madLib.uselessSkill }}</mark> with Thinkful.
+			Thinkful didn't offer a course on <mark>{{ madLib.uselessSkill }}</mark> so <mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> studied programming instead.
 		</p>
 
 		<p>
 			What a great decision!
-			With {{ madLib.gender === 'Female' ? 'her' : 'his' }} new skills,
-			{{ madLib.protoganist }} built a(n) {{ madLib.adjective }} robot named {{ madLib.obnoxiousCelebrity | uppercase }}
-			that not only loved {{ madLib.dirtyTask }} but did it {{ madLib.hugeNumber }} times faster.
+			With <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> new skills,
+			<mark>{{ madLib.protoganist }}</mark> built a(n) <mark>{{ madLib.adjective }}</mark> robot named <mark>{{ madLib.obnoxiousCelebrity | uppercase }}</mark>
+			that not only loved <mark>{{ madLib.dirtyTask }}</mark> but did it <mark>{{ madLib.hugeNumber }}</mark> times faster.
 		</p>
 
 		<button ng-click="reset()">Start over</button>
