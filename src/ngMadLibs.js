@@ -6,14 +6,16 @@ angular.module( 'madLibs', [] )
 .controller( 'madLibsFormController', function( $scope, $attrs, $rootScope ) {
 	$scope.data = {
 		gender: 'Female',
-		protoganist: 'Sue',
-		jobTitle: 'Teacher',
-		tediousTask: 'playground duty',
-		dirtyTask: 'math',
-		uselessSkill: '‘pity da foo’',
-		obnoxiousCelebrity: 'Mr. T',
-		adjective: 'foo’ pitying',
-		hugeNumber: 1000
+		female: true,
+		protoganist: 'Alice',
+		jobTitle: 'Tactician',
+		tediousTask: 'dating',
+		dirtyTask: 'picking up rocks',
+		uselessSkill: 'dual guard',
+		obnoxiousCelebrity: 'Frederick',
+		adjective: 'tall',
+		adjectiveVowel: false,
+		hugeNumber: 25
 	};
 	$scope.view = { inputMode: true };
 
@@ -21,6 +23,8 @@ angular.module( 'madLibs', [] )
 	$scope.submit = function() {
 		// check data is valid
 		$scope.view.inputMode = false;
+		$scope.data.female = $scope.data.gender !== 'male';
+		$scope.data.adjectiveVowel = /^[aeiou]/i.test( $scope.data.adjective );
 		// tell the story controller
 		$rootScope.$broadcast( 'displayData', $scope.data );
 	};

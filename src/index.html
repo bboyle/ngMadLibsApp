@@ -27,7 +27,7 @@
 				<li><input type="text" size="15" required ng-model="data.protoganist"></li>
 				<li><input type="text" size="10" required ng-model="data.jobTitle"></li>
 				<li><input type="text" size="15" required ng-model="data.tediousTask"></li>
-				<li><input type="text" size="10" required ng-model="data.dirtyTask"></li>
+				<li><input type="text" size="15" required ng-model="data.dirtyTask"></li>
 				<li><input type="text" size="15" required ng-model="data.uselessSkill"></li>
 				<li><input type="text" size="10" required ng-model="data.obnoxiousCelebrity"></li>
 				<li><input type="text" size="10" required ng-model="data.adjective"></li>
@@ -40,17 +40,19 @@
 	<article ng-show="view.show" ng-controller="madLibsStoryController">
 		<p>
 			<mark>{{ madLib.protoganist }}</mark> was a <mark>{{ madLib.jobTitle }}</mark> who loved technology.
-			Although <mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> loved parts of <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> job,
-			<mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> absolutely hated <mark>{{ madLib.tediousTask }}</mark> and <mark>{{ madLib.dirtyTask }}</mark>.
-			So, <mark>{{ madLib.protoganist }}</mark> met with <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> life mentor <mark>{{ madLib.obnoxiousCelebrity }}</mark>
-			who told <mark>{{ madLib.gender === 'Female' ? 'her' : 'him' }}</mark> to learn how to <mark>{{ madLib.uselessSkill }}</mark> with Thinkful.
-			Thinkful didn't offer a course on <mark>{{ madLib.uselessSkill }}</mark> so <mark>{{ madLib.gender === 'Female' ? 'she' : 'he' }}</mark> studied programming instead.
+			Although {{ madLib.female ? 'she' : 'he' }} loved parts of {{ madLib.female ? 'her' : 'his' }} job,
+			{{ madLib.female ? 'she' : 'he' }} absolutely hated <mark>{{ madLib.tediousTask }}</mark> and <mark>{{ madLib.dirtyTask }}</mark>.
+			So, <mark>{{ madLib.protoganist }}</mark> met with {{ madLib.female ? 'her' : 'his' }} life mentor <mark>{{ madLib.obnoxiousCelebrity }}</mark>
+			who told {{ madLib.female ? 'her' : 'him' }} to learn how to <mark>{{ madLib.uselessSkill }}</mark> with Thinkful.
+			Thinkful didn't offer a course on <mark>{{ madLib.uselessSkill }}</mark> so {{ madLib.female ? 'she' : 'he' }} studied programming instead.
 		</p>
 
 		<p>
 			What a great decision!
-			With <mark>{{ madLib.gender === 'Female' ? 'her' : 'his' }}</mark> new skills,
-			<mark>{{ madLib.protoganist }}</mark> built a(n) <mark>{{ madLib.adjective }}</mark> robot named <mark>{{ madLib.obnoxiousCelebrity | uppercase }}</mark>
+			With <mark>{{ madLib.female ? 'her' : 'his' }}</mark> new skills,
+			<mark>{{ madLib.protoganist }}</mark> built 
+			{{ madLib.adjectiveVowel ? 'an' : 'a' }}
+			<mark>{{ madLib.adjective }}</mark> robot named <mark>{{ madLib.obnoxiousCelebrity | uppercase }}</mark>
 			that not only loved <mark>{{ madLib.dirtyTask }}</mark> but did it <mark>{{ madLib.hugeNumber }}</mark> times faster.
 		</p>
 
