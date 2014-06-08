@@ -1,6 +1,6 @@
 // http://www.thinkful.com/courses/ANG-001/unit/1/lesson/3/assignment/3
 // http://www.thinkful.com/courses/ANG-001/unit/1/lesson/3/assignment/6
-angular.module( 'madLibs', [] )
+angular.module( 'madLibs', [ 'ngAnimate' ])
 
 // handle form updates and submission
 .controller( 'madLibsFormController', function( $scope, $attrs, $rootScope ) {

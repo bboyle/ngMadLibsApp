@@ -23,6 +23,7 @@ article {
 	border: .3em solid #000;
 	margin-top: -.3em; /* overlap border */
 	padding: 1em 3.5em 5em;
+	overflow: hidden; /* hide elements outside the bounds for animated fly in */
 }
 
 ul {
@@ -70,4 +71,16 @@ button:active {
 mark {
 	font-weight: bold;
 	background: transparent;
+}
+.ng-hide-add,
+.ng-hide-remove {
+	display: block !important;
+}
+.ng-hide {
+	max-height: 0;
+	transition: none;
+}
+article, section {
+	max-height: 20em;
+	transition: .5s ease-out all;
 }
