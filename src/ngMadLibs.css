@@ -72,15 +72,39 @@ mark {
 	font-weight: bold;
 	background: transparent;
 }
-.ng-hide-add,
+
+
+/* animation */
 .ng-hide-remove {
 	display: block !important;
 }
+
+/* fade in content */
 .ng-hide {
-	max-height: 0;
+	opacity: 0;
 	transition: none;
 }
 article, section {
-	max-height: 20em;
-	transition: .5s ease-out all;
+	opacity: 1;
+	transition: .5s all;
+}
+
+
+/* fly-in mark/input elements */
+.ng-hide-remove li,
+.ng-hide-remove mark {
+	left: -30em;
+	top: -30em;
+}
+.ng-hide-remove li:nth-of-type(2n),
+.ng-hide-remove mark:nth-of-type(2n) {
+	left: 30em;
+	top: 30em;
+}
+li,
+mark {
+	transition: .5s all;
+	position: relative;
+	top: 0;
+	left: 0;
 }
